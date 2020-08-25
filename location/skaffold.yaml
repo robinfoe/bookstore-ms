@@ -1,0 +1,11 @@
+apiVersion: skaffold/v2beta1
+kind: Config
+metadata:
+  name: tsm-location
+build:
+  artifacts:
+  - image: docker.io/robinfoe/tsm-location
+deploy:
+  kubectl:
+    manifests:
+    - kubernetes/deploy.yaml

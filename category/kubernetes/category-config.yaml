@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  app.properties: |-
+    logging.level.com.vmware=DEBUG
+    server.port=8080
+    location.api.url=http://location:8080
+    from.cluster=fry
+kind: ConfigMap
+metadata:
+  name: category-config

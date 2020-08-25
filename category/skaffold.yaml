@@ -1,0 +1,11 @@
+apiVersion: skaffold/v2beta1
+kind: Config
+metadata:
+  name: tsm-category
+build:
+  artifacts:
+  - image: docker.io/robinfoe/tsm-category
+deploy:
+  kubectl:
+    manifests:
+    - kubernetes/deploy.yaml

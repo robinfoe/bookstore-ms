@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: location
+  labels:
+    app: location
+spec:
+  ports:
+    - port: 8080
+      name: location-port
+  selector:
+    app: location
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: location
+  labels:
+    app: location
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: location
+  template:
+    metadata:
+      labels:
+        app: location
+    
+    spec:
+      containers:
+      - name: location
+        image: docker.io/robinfoe/tsm-location
+        ports:
+        - containerPort: 8080
+        command: ["java"]
+        args: ["-jar", "-Dspring.config.location=file:/app/config/app.properties", "location.jar"]
+        volumeMounts:
+        - name: location-config
+          mountPath: /app/config/
+      volumes:
+      - name: location-config
+        configMap:
+          name: location-config
+      
