@@ -1,0 +1,14 @@
+kind: Ingress
+apiVersion: extensions/v1beta1
+metadata:
+  name: book-ingress
+spec:
+  rules:
+    - host: book.ingress.path
+      http: 
+        paths:
+          - path: /
+            backend:
+              serviceName: book
+              servicePort: 8080
+
