@@ -1,0 +1,14 @@
+kind: Ingress
+apiVersion: extensions/v1beta1
+metadata:
+  name: category-ingress
+spec:
+  rules:
+    - host: category.ingress.path
+      http: 
+        paths:
+          - path: /
+            backend:
+              serviceName: category
+              servicePort: 8080
+

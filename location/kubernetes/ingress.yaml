@@ -1,0 +1,14 @@
+kind: Ingress
+apiVersion: extensions/v1beta1
+metadata:
+  name: location-ingress
+spec:
+  rules:
+    - host: location.ingress.path
+      http: 
+        paths:
+          - path: /
+            backend:
+              serviceName: location
+              servicePort: 8080
+
