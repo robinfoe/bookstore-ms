@@ -45,7 +45,7 @@
         <dependency>
             <groupId>io.opentracing.contrib</groupId>
             <artifactId>opentracing-spring-cloud-starter</artifactId>
-            <version>0.1.7</version>
+            <version>0.5.9</version>
         </dependency>
 
         <!-- <dependency>
