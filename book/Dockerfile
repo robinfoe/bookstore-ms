@@ -1,4 +1,4 @@
-FROM openjdk:13-ea-27-jdk-alpine3.10
+FROM openjdk:18-oracle
 #VOLUME /tmp
 RUN mkdir /app && \
     apk add tcpdump
